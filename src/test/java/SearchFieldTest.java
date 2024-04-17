@@ -43,8 +43,7 @@ public class SearchFieldTest {
         if (webDriver != null) {
             webDriver.close();
         }
-       // if (userReg == true) {
-       // }
+       // if (userReg == true){}
     }
 
     @DataProvider(name = "getUser")
@@ -81,7 +80,6 @@ public class SearchFieldTest {
         header.typeInSearchBar("user");
         Assert.assertTrue(header.hasSearchResultsGreaterThanValue(50), "Users are not shown");
 
-       //webDriver.close();
 
     }
 }
