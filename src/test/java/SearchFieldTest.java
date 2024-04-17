@@ -43,8 +43,8 @@ public class SearchFieldTest {
         if (webDriver != null) {
             webDriver.close();
         }
-        if (userReg == true) {
-        }
+       // if (userReg == true) {
+       // }
     }
 
     @DataProvider(name = "getUser")
@@ -63,7 +63,6 @@ public class SearchFieldTest {
         ProfilePage profilePage = new ProfilePage(webDriver);
 
         homePage.navigateTo();
-
         Assert.assertTrue(homePage.isUrlLoaded(), "Home page isn't loaded");
 
         header.clickLoginButton();
@@ -80,9 +79,9 @@ public class SearchFieldTest {
 
         header.clickSearchIcon();
         header.typeInSearchBar("user");
-        header.waitForResultsInSearchField();
+        Assert.assertTrue(header.hasSearchResultsGreaterThanValue(50), "Users are not shown");
 
-       webDriver.close();
+       //webDriver.close();
 
     }
 }
