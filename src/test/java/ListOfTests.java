@@ -14,6 +14,6 @@ public class ListOfTests {
     public void SearchFieldTest(){}
 
     @Test
-    public void ExitTest(){}
+    public void LogOutTest(){}
 
 }

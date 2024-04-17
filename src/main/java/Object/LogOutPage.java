@@ -21,4 +21,10 @@ public class LogOutPage {
                     (By.xpath("//*[@class='nav-link']//*[@class='fas fa-sign-out-alt fa-lg']"))));
             logoutButton.click();
         }
+
+        public void receiveLogoutMessage(){
+            WebDriverWait waitForMessage = new WebDriverWait(this.webDriver, Duration.ofSeconds(20));
+            WebElement postLikeMessage = waitForMessage.until(ExpectedConditions.visibilityOf(webDriver.findElement
+                    (By.xpath("//*[@id='toast-container']//*[@aria-label='Successful logout!']"))));
+        }
     }
