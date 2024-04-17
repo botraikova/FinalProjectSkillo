@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Web test suite" verbose="1">
+    <test name="smoke">
+        <classes>
+            <class name="ListOfTests"></class>
+        </classes>
+    </test>
+</suite>
