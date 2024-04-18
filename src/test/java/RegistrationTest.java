@@ -45,7 +45,7 @@ public class RegistrationTest extends ScreenshotFailure {
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {
         return new Object[][]{
-                {"musakaobicham", "musakazavecherq@mail.com", "1234567", "1234567"},
+                {"usertofailthetest", "hellogoodbye@mail.com", "1234567", "1234567"},
         };
     }
 
