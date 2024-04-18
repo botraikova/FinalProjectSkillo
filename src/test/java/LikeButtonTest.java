@@ -44,12 +44,12 @@ public class LikeButtonTest {
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {
         return new Object[][]{
-                {"testbo", "1234567", "5493"},
+                {"testbo", "1234567"} // "5493"},
         };
     }
 
     @Test(dataProvider = "getUser")
-    public void loginTest(String username, String password, String userId) {
+    public void loginTest(String username, String password) { //String userId
 
         HomePage homePage = new HomePage(webDriver);
         Header header = new Header(webDriver);
