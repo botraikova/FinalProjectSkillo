@@ -1,6 +1,8 @@
 package Object;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,4 +24,25 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(this.webDriver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.urlToBe(HOME_URL));
     }
+
+    public void clickLikePostButton(){
+        WebDriverWait wait = new WebDriverWait(this.webDriver, Duration.ofSeconds(10));
+        WebElement likePostButton = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(By.xpath("/html/body/app-root/div[2]/app-all-posts/div/div/div[1]/app-post-detail/div/div[2]/div/div[1]/i[1]"))));
+        likePostButton.click();
+    }
+
+    public boolean isLikeButtonClicked() {
+        WebElement likeButton = webDriver.findElement(By.xpath("/html/body/app-root/div[2]/app-all-posts/div/div/div[1]/app-post-detail/div/div[2]/div/div[1]/i[1]"));
+        return likeButton.isSelected();
+    }
+
+//     public boolean isLikeClicked(WebElement likePostButton){
+//        String initialClassName = likePostButton.getAttribute("class");
+//        likePostButton.click();
+//        String nextClassName = likePostButton.getAttribute("class");
+//        return nextClassName.contains("liked");
+//    }
+
+
+
 }
