@@ -19,13 +19,13 @@ public class ScreenshotFailure {
     public static final String SCREENSHOTS_DIR = TEST_RESOURCES_DIR.concat("screenshots\\");
 
 
-    @AfterMethod
-    public void cleanUp(ITestResult testResult) {
-        captureScreenshot(testResult);
-        if (webDriver != null) {
-            webDriver.close();
-        }
-    }
+//    @AfterMethod
+//    public void cleanUp(ITestResult testResult) {
+//        captureScreenshot(testResult);
+//        if (webDriver != null) {
+//            webDriver.close();
+//        }
+//    }
 
     private void captureScreenshot(ITestResult testResult) {
         if (ITestResult.FAILURE == testResult.getStatus()) {
