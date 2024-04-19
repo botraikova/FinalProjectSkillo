@@ -21,30 +21,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 import Object.*;
 
-public class SearchFieldTest {
-    private WebDriver webDriver;
-    //ChromeDriver webDriver;
-    private boolean userReg = false;
-
-
-    @BeforeMethod(alwaysRun = true)
-    public void beforeTest() {
-        WebDriverManager.chromedriver().setup();
-        //WebDriverManager.chromedriver().clearDriverCache().setup();
-        webDriver = new ChromeDriver();
-
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterTest() {
-        if (webDriver != null) {
-            webDriver.close();
-        }
-       // if (userReg == true){}
-    }
+public class SearchFieldTest extends DriverMaintenanceAndScreenshots {
 
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {
@@ -59,7 +36,7 @@ public class SearchFieldTest {
         HomePage homePage = new HomePage(webDriver);
         Header header = new Header(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
-        ProfilePage profilePage = new ProfilePage(webDriver);
+
 
         homePage.navigateTo();
         Assert.assertTrue(homePage.isUrlLoaded(), "Home page isn't loaded");

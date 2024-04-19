@@ -4,43 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
-public class LikeButtonTest extends ScreenshotFailure {
+public class LikeButtonTest extends DriverMaintenanceAndScreenshots {
 
-    private WebDriver webDriver;
-    //ChromeDriver webDriver;
-    private boolean userReg = false;
-
-    @BeforeMethod(alwaysRun = true)
-    public void beforeTest() {
-        WebDriverManager.chromedriver().setup();
-        //WebDriverManager.chromedriver().clearDriverCache().setup();
-        webDriver = new ChromeDriver();
-
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterTest() {
-        if (webDriver != null) {
-            webDriver.close();
-        }
-        if (userReg == true) {
-        }
-    }
 
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {

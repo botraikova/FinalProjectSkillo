@@ -15,32 +15,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class RegistrationTest extends ScreenshotFailure {
-    private WebDriver webDriver;
+public class RegistrationTest extends DriverMaintenanceAndScreenshots {
 
-    //ChromeDriver webDriver;
-   private boolean userReg = false;
-
-    @BeforeMethod(alwaysRun = true)
-    public void beforeTest() {
-        WebDriverManager.chromedriver().setup();
-        //WebDriverManager.chromedriver().clearDriverCache().setup();
-        webDriver = new ChromeDriver();
-
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterTest() {
-        if (webDriver != null) {
-            webDriver.close();
-        }
-        if (userReg == true) {
-        }
-
-    }
 
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {
@@ -79,13 +55,10 @@ public class RegistrationTest extends ScreenshotFailure {
         registrationPage.clickSignIn();
 
         header.clickProfileButton();
-        //profilePage.isUrlLoaded(userId);
+
         profilePage.isUrlLoaded();
 
         Assert.assertTrue(profilePage.isUrlLoaded(), "Profile page isn't loaded");
 
-
-        //Assert.assertEquals(webDriver.getCurrentUrl(), "http://training.skillo-bg.com:4200/users/" + userId);
-        //Assert.assertTrue(profilePage.isUrlLoaded(),"This is not Profile page for" + "username");
     }
 }

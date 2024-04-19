@@ -1,10 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -14,38 +9,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import javax.swing.*;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import Object.*;
 //import Factory.*;
 
-public class LoginTest extends ScreenshotFailure {
-    private WebDriver webDriver;
-
-    //ChromeDriver webDriver;
-    private boolean userReg = false;
-
-    @BeforeMethod(alwaysRun = true)
-    public void beforeTest() {
-        WebDriverManager.chromedriver().setup();
-        //WebDriverManager.chromedriver().clearDriverCache().setup();
-        webDriver = new ChromeDriver();
-
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterTest() {
-        if (webDriver != null) {
-            webDriver.close();
-        }
-        if (userReg == true) {
-        }
-    }
+public class LoginTest extends DriverMaintenanceAndScreenshots {
 
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {
@@ -83,7 +53,7 @@ public class LoginTest extends ScreenshotFailure {
         loginPage.clickSignInButton();
         header.clickProfileButton();
         profilePage.isUrlLoaded(userId);
-        //profilePage.isUrlLoaded();
+
 
         Assert.assertTrue(profilePage.isUrlLoaded(), "Profile page isn't loaded");
 
