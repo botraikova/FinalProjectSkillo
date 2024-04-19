@@ -1,6 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -20,10 +21,10 @@ import java.util.concurrent.TimeUnit;
 import Object.*;
 //import Factory.*;
 
-public class LoginTest {
+public class LoginTest extends ScreenshotFailure {
+    private WebDriver webDriver;
 
-
-    ChromeDriver webDriver;
+    //ChromeDriver webDriver;
     private boolean userReg = false;
 
     @BeforeMethod(alwaysRun = true)

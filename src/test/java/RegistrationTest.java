@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class RegistrationTest extends ScreenshotFailure {
     private WebDriver webDriver;
 
-    ChromeDriver webDriverDriver;
+    //ChromeDriver webDriver;
    private boolean userReg = false;
 
     @BeforeMethod(alwaysRun = true)

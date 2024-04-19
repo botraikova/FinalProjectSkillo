@@ -18,8 +18,8 @@ import java.util.concurrent.TimeUnit;
 
 public class LikeButtonTest extends ScreenshotFailure {
 
-
-    ChromeDriver webDriver;
+    private WebDriver webDriver;
+    //ChromeDriver webDriver;
     private boolean userReg = false;
 
     @BeforeMethod(alwaysRun = true)
@@ -70,7 +70,6 @@ public class LikeButtonTest extends ScreenshotFailure {
 
         Assert.assertTrue(loginPage.isCheckedRememberMe(), "Remember Me checkbox isn't checked");
         loginPage.clickSignInButton();
-
 
         WebElement likePostButton = webDriver.findElement(By.xpath("/html/body/app-root/div[2]/app-all-posts/div/div/div[1]/app-post-detail/div/div[2]/div/div[1]/i[1]"));
 

@@ -22,8 +22,8 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import Object.*;
 
 public class SearchFieldTest {
-
-    ChromeDriver webDriver;
+    private WebDriver webDriver;
+    //ChromeDriver webDriver;
     private boolean userReg = false;
 
 
