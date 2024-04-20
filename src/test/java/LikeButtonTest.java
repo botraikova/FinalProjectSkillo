@@ -1,16 +1,9 @@
 import Object.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class LikeButtonTest extends DriverMaintenanceAndScreenshots {
@@ -19,12 +12,12 @@ public class LikeButtonTest extends DriverMaintenanceAndScreenshots {
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {
         return new Object[][]{
-                {"testbo", "1234567"} // "5493"},
+                {"testbo", "1234567"}
         };
     }
 
     @Test(dataProvider = "getUser")
-    public void loginTest(String username, String password) { //String userId
+    public void loginTest(String username, String password) {
 
         HomePage homePage = new HomePage(webDriver);
         Header header = new Header(webDriver);
