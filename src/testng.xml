@@ -2,7 +2,11 @@
 <suite name="Web test suite" verbose="1">
     <test name="smoke">
         <classes>
-            <class name="ListOfTests"></class>
+            <class name="LikeButtonTest"></class>
+            <class name="LoginTest"></class>
+            <class name="LogOutTest"></class>
+            <class name="RegistrationTest"></class>
+            <class name="SearchFieldTest"></class>
         </classes>
     </test>
 </suite>
