@@ -3,7 +3,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import Object.*;
 
-public class SearchFieldTest extends DriverMaintenanceAndScreenshots {
+public class SearchFieldTest extends TestObjectAndDriver {
 
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {

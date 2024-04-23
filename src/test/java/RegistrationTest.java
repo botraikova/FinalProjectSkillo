@@ -3,7 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class RegistrationTest extends DriverMaintenanceAndScreenshots {
+public class RegistrationTest extends TestObjectAndDriver {
 
 
     @Test

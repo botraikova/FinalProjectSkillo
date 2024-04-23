@@ -7,7 +7,7 @@ import java.time.Duration;
 import Object.*;
 
 
-public class LoginTest extends DriverMaintenanceAndScreenshots {
+public class LoginTest extends TestObjectAndDriver {
 
     @DataProvider(name = "getUser")
     public Object[][] getUsers() {

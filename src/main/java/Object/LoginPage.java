@@ -44,4 +44,5 @@ public class LoginPage {
         WebElement signInButton = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(By.id("sign-in-button"))));
         signInButton.click();
     }
+
 }

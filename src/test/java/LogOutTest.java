@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 
-public class LogOutTest extends DriverMaintenanceAndScreenshots {
+public class LogOutTest extends TestObjectAndDriver {
 
 
     @DataProvider(name = "getUser")
